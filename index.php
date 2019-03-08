@@ -51,7 +51,6 @@
     
     $gbpPrice = get_currency(trim(str_replace(",",".",str_replace("£", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext))),"GBP");
     $gbpPriceConverted = get_currency($gbpPrice,"GBP");
-    //echo "GB: " . $gbpPriceConverted;
     if(($gbpPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $gbpPriceConverted)) {
       $cheapestPrice = $gbpPriceConverted;
       $cheapestUrl = "<a href='" . $dodexUkPrefix . $album . "' target=_blank>";
@@ -61,7 +60,6 @@
     $string = getSource($dodexDePrefix . $album);
     $html->load($string);
     $dePrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "DE: " . $dePrice;
     if(($dePrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $dePrice)) {
       $cheapestPrice = $dePrice;
       $cheapestUrl = "<a href='" . $dodexDePrefix . $album . "' target=_blank>";
@@ -71,7 +69,6 @@
     $string = getSource($dodexNlPrefix . $album);
     $html->load($string);
     $nlPrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "NL: " . $nlPrice;
     if(($nlPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $nlPrice)) {
       $cheapestPrice = $nlPrice;
       $cheapestUrl = "<a href='" . $dodexNlPrefix . $album . "' target=_blank>";
@@ -80,7 +77,6 @@
     /* ES */
     $string = getSource($dodexEsPrefix . $album);
     $esPrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "ES: " . $esPrice;
     if(($esPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $esPrice)) {
       $cheapestPrice = $esPrice;
       $cheapestUrl = "<a href='" . $dodexEsPrefix . $album . "' target=_blank>";
@@ -90,7 +86,6 @@
     $string = getSource($dodexAtPrefix . $album);
     $html->load($string);
     $atPrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "AT: " . $atPrice;
     if(($atPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $atPrice)) {
       $cheapestPrice = $atPrice;
       $cheapestUrl = "<a href='" . $dodexAtPrefix . $album . "' target=_blank>";
@@ -100,7 +95,6 @@
     $string = getSource($dodexItPrefix . $album);
     $html->load($string);
     $itPrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "IT: " . $gbpPriceConverted;
     if(($itPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $itPrice)) {
       $cheapestPrice = $itPrice;
       $cheapestUrl = "<a href='" . $dodexItPrefix . $album . "' target=_blank>";
@@ -111,7 +105,6 @@
     $html->load($string);
     $plPrice = trim(str_replace(",",".",str_replace(" zł", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
     $plPriceConverted = get_currency($plPrice,"PLN");
-    //echo "PL: " . $gbpPriceConverted;
     if(($plPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $plPriceConverted)) {
       $cheapestPrice = $plPriceConverted;
       $cheapestUrl = "<a href='" . $dodexPlPrefix . $album . "' target=_blank>";
@@ -121,7 +114,6 @@
     $string = getSource($dodexFrPrefix . $album);
     $html->load($string);
     $frPrice = trim(str_replace(",",".",str_replace("€ ", "", $html->find('span[class="current_price font_bold"]', 0)->plaintext)));
-    //echo "FR: " . $frPrice;
     if(($frPrice != "") && ($cheapestPrice == 0.00 || $cheapestPrice > $frPrice)) {
       $cheapestPrice = $frPrice;
       $cheapestUrl = "<a href='" . $dodexFrPrefix . $album . "' target=_blank>";
@@ -136,7 +128,6 @@
   }
 
   $emailBody = $emailBody . "</table></body></html>";
-  echo $emailBody;
 
   $to = 'youremail@domain.com';
   $send = 'youremail@domain.com';
