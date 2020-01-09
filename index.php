@@ -129,8 +129,8 @@
 
   $emailBody = $emailBody . "</table></body></html>";
 
-  $to = 'youremail@domain.com';
-  $send = 'youremail@domain.com';
+  $to = 'gbackupje@gmail.com';
+  $send = 'gbackupje@gmail.com';
   $subject = 'Dodex Vinyl Price Update';
 
   $headers = 'From: Dodax Price Checker <' . $to . ">\r\n" ;
