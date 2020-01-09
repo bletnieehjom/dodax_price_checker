@@ -12,7 +12,7 @@
   $dodexFrPrefix = "https://www.dodax.fr/fr-fr/music-cds-dvds-vinyl/";
 
   $albums = array(
-    "classic-rock/alt-j-relaxer-dpR2QSF17M4QK/"
+    "hip-hop-rap/50-cent-best-of-50-cent-dpABLPPGBE2S9/"
   ); 
 
   
@@ -139,14 +139,16 @@
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";   
   mail($send, $subject, $emailBody, $headers);
+
+  echo $emailBody;
     
   function get_currency($amount,$fromCurrency)  {
     $fxRate = 0.00;
     if($fromCurrency == "GBP") {
-       $fxRate = 1.14;
+       $fxRate = 1.18;
     }
     else if($fromCurrency == "PLN") {
-       $fxRate = 0.23;
+       $fxRate = 0.24;
     }
     $total = $fxRate * $amount;
     return number_format($total, 2, '.', '');
